@@ -40,18 +40,7 @@ const projects = [
       "Compliance reporting automation",
       "Optimized query performance",
     ],
-  },
-  {
-    title: "Real-time Chat Application",
-    description:
-      "Built a scalable real-time messaging platform with WebSocket support, handling concurrent connections and message persistence.",
-    technologies: ["Spring Boot", "WebSocket", "Redis", "MongoDB"],
-    highlights: [
-      "Real-time message delivery",
-      "Scalable architecture",
-      "Message persistence",
-    ],
-  },
+  }
 ];
 
 export const Projects = () => {
