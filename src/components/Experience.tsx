@@ -1,5 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
@@ -48,8 +53,39 @@ const experiences = [
 ];
 
 export const Experience = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      cardsRef.current.forEach((card, index) => {
+        if (card) {
+          gsap.from(card, {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: card,
+              start: "top bottom-=100",
+              toggleActions: "play none none reverse",
+            },
+            delay: index * 0.2,
+          });
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const addToRefs = (el: HTMLDivElement | null) => {
+    if (el && !cardsRef.current.includes(el)) {
+      cardsRef.current.push(el);
+    }
+  };
+
   return (
-    <section id="experience" className="py-20 px-6">
+    <section ref={sectionRef} id="experience" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Professional Experience</h2>
@@ -60,6 +96,7 @@ export const Experience = () => {
           {experiences.map((exp, index) => (
             <Card
               key={index}
+              ref={addToRefs}
               className="p-8 gradient-card border-border/50 hover:border-primary/50 transition-smooth hover:shadow-glow"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">

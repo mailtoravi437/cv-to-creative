@@ -1,6 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -36,11 +41,53 @@ const projects = [
       "Optimized query performance",
     ],
   },
+  {
+    title: "Real-time Chat Application",
+    description:
+      "Built a scalable real-time messaging platform with WebSocket support, handling concurrent connections and message persistence.",
+    technologies: ["Spring Boot", "WebSocket", "Redis", "MongoDB"],
+    highlights: [
+      "Real-time message delivery",
+      "Scalable architecture",
+      "Message persistence",
+    ],
+  },
 ];
 
 export const Projects = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      cardsRef.current.forEach((card, index) => {
+        if (card) {
+          gsap.from(card, {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: card,
+              start: "top bottom-=100",
+              toggleActions: "play none none reverse",
+            },
+            delay: index * 0.2,
+          });
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const addToRefs = (el: HTMLDivElement | null) => {
+    if (el && !cardsRef.current.includes(el)) {
+      cardsRef.current.push(el);
+    }
+  };
+
   return (
-    <section id="projects" className="py-20 px-6">
+    <section ref={sectionRef} id="projects" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Key Projects</h2>
@@ -49,10 +96,11 @@ export const Projects = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <Card
               key={index}
+              ref={addToRefs}
               className="p-6 gradient-card border-border/50 hover:border-primary/50 transition-smooth hover:shadow-glow group"
             >
               <div className="flex items-start justify-between mb-4">
