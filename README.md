@@ -62,6 +62,28 @@ This project is built with:
 
 ## How can I deploy this project?
 
+### Option 1: Deploy to GitHub Pages (Recommended)
+
+This project is configured to automatically deploy to GitHub Pages when you push to the main branch.
+
+**Setup Instructions:**
+
+1. Go to your repository settings on GitHub
+2. Navigate to "Pages" in the left sidebar
+3. Under "Build and deployment", select "Source: GitHub Actions"
+4. Push your changes to the `main` branch
+5. The GitHub Actions workflow will automatically build and deploy your site
+6. Your site will be available at: `https://mailtoravi437.github.io/cv-to-creative/`
+
+**Manual Deployment:**
+
+You can also trigger a deployment manually:
+1. Go to the "Actions" tab in your GitHub repository
+2. Select "Deploy to GitHub Pages" workflow
+3. Click "Run workflow" button
+
+### Option 2: Deploy to Lovable
+
 Simply open [Lovable](https://lovable.dev/projects/363198cb-15ae-4732-89dc-b1b5130396ef) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
@@ -71,3 +93,13 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Can I connect a custom domain to GitHub Pages?
+
+Yes! To use a custom domain with GitHub Pages:
+
+1. Go to your repository settings on GitHub
+2. Navigate to "Pages" in the left sidebar
+3. Under "Custom domain", enter your domain name
+4. Update your domain's DNS settings to point to GitHub Pages
+5. Read more: [GitHub Pages custom domain documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
