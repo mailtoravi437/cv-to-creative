@@ -76,11 +76,11 @@ export const Projects = () => {
   };
 
   return (
-    <section ref={sectionRef} id="projects" className="py-20 px-6">
+    <section ref={sectionRef} id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Key Projects</h2>
-          <p className="text-muted-foreground text-lg">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gradient">Key Projects</h2>
+          <p className="text-muted-foreground text-xl font-light">
             Impactful solutions for real-world challenges
           </p>
         </div>
@@ -90,23 +90,23 @@ export const Projects = () => {
             <Card
               key={index}
               ref={addToRefs}
-              className="game-card p-6 group"
+              className="glass-card p-8 hover-lift group border-border/50"
             >
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-smooth">
+              <div className="flex items-start justify-between mb-6">
+                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-smooth">
                   {project.title}
                 </h3>
-                <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-smooth" />
+                <ExternalLink className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-smooth" />
               </div>
               
-              <p className="text-muted-foreground mb-4">{project.description}</p>
+              <p className="text-muted-foreground mb-6 font-light leading-relaxed">{project.description}</p>
               
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-foreground mb-2">Key Highlights:</h4>
-                <ul className="space-y-1">
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-primary mb-3">Key Highlights:</h4>
+                <ul className="space-y-2">
                   {project.highlights.map((highlight, i) => (
-                    <li key={i} className="flex gap-2 text-sm text-muted-foreground">
-                      <span className="text-primary">▹</span>
+                    <li key={i} className="flex gap-2 text-sm text-muted-foreground font-light">
+                      <span className="text-primary font-bold">▹</span>
                       <span>{highlight}</span>
                     </li>
                   ))}
@@ -118,7 +118,7 @@ export const Projects = () => {
                   <Badge
                     key={i}
                     variant="secondary"
-                    className="bg-secondary/20 border-2 border-secondary/30 hover:bg-secondary/30 hover:border-secondary hover:scale-110 transition-bounce cursor-default text-xs"
+                    className="glass-card border-border/50 hover:border-secondary/50 hover:shadow-premium hover:scale-105 transition-spring cursor-default text-xs font-medium"
                   >
                     {tech}
                   </Badge>

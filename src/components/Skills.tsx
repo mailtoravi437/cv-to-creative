@@ -66,11 +66,12 @@ export const Skills = () => {
   };
 
   return (
-    <section ref={sectionRef} id="skills" className="py-20 px-6 bg-secondary/30">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Technical Expertise</h2>
-          <p className="text-muted-foreground text-lg">
+    <section ref={sectionRef} id="skills" className="py-24 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gradient">Technical Expertise</h2>
+          <p className="text-muted-foreground text-xl font-light">
             Modern technologies for building scalable systems
           </p>
         </div>
@@ -80,15 +81,15 @@ export const Skills = () => {
             <Card
               key={index}
               ref={addToRefs}
-              className="game-card p-6"
+              className="glass-card p-6 hover-lift"
             >
-              <h3 className="text-xl font-bold mb-4 text-primary neon-text">{category.category}</h3>
+              <h3 className="text-xl font-bold mb-4 text-gradient">{category.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, i) => (
                   <Badge
                     key={i}
                     variant="secondary"
-                    className="bg-primary/10 border-2 border-primary/30 hover:bg-primary/20 hover:border-primary hover:scale-110 transition-bounce cursor-default"
+                    className="glass-card border-border/50 hover:border-primary/50 hover:shadow-premium hover:scale-105 transition-spring cursor-default font-medium"
                   >
                     {skill}
                   </Badge>

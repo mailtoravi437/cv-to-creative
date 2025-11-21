@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -49,8 +53,8 @@ export default {
         },
         gradient: {
           primary: "var(--gradient-primary)",
-          card: "var(--gradient-card)",
-          glow: "var(--gradient-glow)",
+          secondary: "var(--gradient-secondary)",
+          mesh: "var(--gradient-mesh)",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
