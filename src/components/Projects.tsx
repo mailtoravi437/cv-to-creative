@@ -90,7 +90,7 @@ export const Projects = () => {
             <Card
               key={index}
               ref={addToRefs}
-              className="p-6 gradient-card border-border/50 hover:border-primary/50 transition-smooth hover:shadow-glow group"
+              className="game-card p-6 group"
             >
               <div className="flex items-start justify-between mb-4">
                 <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-smooth">
@@ -118,7 +118,7 @@ export const Projects = () => {
                   <Badge
                     key={i}
                     variant="secondary"
-                    className="bg-background/50 text-xs"
+                    className="bg-secondary/20 border-2 border-secondary/30 hover:bg-secondary/30 hover:border-secondary hover:scale-110 transition-bounce cursor-default text-xs"
                   >
                     {tech}
                   </Badge>
