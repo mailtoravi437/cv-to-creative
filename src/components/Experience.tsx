@@ -85,26 +85,26 @@ export const Experience = () => {
   };
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 px-6">
+    <section ref={sectionRef} id="experience" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Professional Experience</h2>
-          <p className="text-muted-foreground text-lg">Building scalable systems at leading tech companies</p>
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gradient">Professional Experience</h2>
+          <p className="text-muted-foreground text-xl font-light">Building scalable systems at leading tech companies</p>
         </div>
         
-        <div className="space-y-8">
+        <div className="space-y-6">
           {experiences.map((exp, index) => (
             <Card
               key={index}
               ref={addToRefs}
-              className="game-card p-8"
+              className="glass-card p-8 hover-lift border-border/50"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
                     <h3 className="text-2xl font-bold text-foreground">{exp.company}</h3>
                     {exp.current && (
-                      <Badge className="bg-primary/10 text-primary border-primary/20">
+                      <Badge className="gradient-primary text-white border-0 shadow-glow">
                         Current
                       </Badge>
                     )}
@@ -112,16 +112,16 @@ export const Experience = () => {
                   <p className="text-lg text-primary font-semibold mb-1">{exp.role}</p>
                   <p className="text-muted-foreground text-sm">{exp.location}</p>
                 </div>
-                <Badge variant="outline" className="whitespace-nowrap h-fit">
+                <Badge variant="outline" className="glass-card whitespace-nowrap h-fit border-border/50">
                   {exp.period}
                 </Badge>
               </div>
               
               <ul className="space-y-3">
                 {exp.achievements.map((achievement, i) => (
-                  <li key={i} className="flex gap-3 text-muted-foreground">
-                    <span className="text-primary mt-1.5">▹</span>
-                    <span>{achievement}</span>
+                  <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed">
+                    <span className="text-primary mt-1.5 font-bold">▹</span>
+                    <span className="font-light">{achievement}</span>
                   </li>
                 ))}
               </ul>
