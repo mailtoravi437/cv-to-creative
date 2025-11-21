@@ -50,6 +50,7 @@ export default {
         gradient: {
           primary: "var(--gradient-primary)",
           card: "var(--gradient-card)",
+          glow: "var(--gradient-glow)",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

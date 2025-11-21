@@ -97,7 +97,7 @@ export const Experience = () => {
             <Card
               key={index}
               ref={addToRefs}
-              className="p-8 gradient-card border-border/50 hover:border-primary/50 transition-smooth hover:shadow-glow"
+              className="game-card p-8"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                 <div>

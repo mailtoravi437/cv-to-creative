@@ -80,15 +80,15 @@ export const Skills = () => {
             <Card
               key={index}
               ref={addToRefs}
-              className="p-6 gradient-card border-border/50 hover:border-primary/50 transition-smooth hover:shadow-glow"
+              className="game-card p-6"
             >
-              <h3 className="text-xl font-bold mb-4 text-primary">{category.category}</h3>
+              <h3 className="text-xl font-bold mb-4 text-primary neon-text">{category.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, i) => (
                   <Badge
                     key={i}
                     variant="secondary"
-                    className="bg-background/50 hover:bg-background/80 transition-smooth"
+                    className="bg-primary/10 border-2 border-primary/30 hover:bg-primary/20 hover:border-primary hover:scale-110 transition-bounce cursor-default"
                   >
                     {skill}
                   </Badge>

@@ -50,9 +50,11 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,229,255,0.1),transparent_50%)]" />
+    <section ref={heroRef} className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden grid-background">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-background" />
+      <div className="absolute inset-0 gradient-glow" />
+      <div className="absolute top-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       
       <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">
         <div className="inline-block">
@@ -62,7 +64,7 @@ export const Hero = () => {
         </div>
         
         <h1 ref={titleRef} className="text-5xl md:text-7xl font-bold tracking-tight">
-          <span className="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent neon-text">
             Ravi Kumar
           </span>
         </h1>
@@ -73,13 +75,13 @@ export const Hero = () => {
         </p>
         
         <div ref={buttonsRef} className="flex flex-wrap justify-center gap-4">
-          <Button asChild size="lg" className="shadow-glow">
+          <Button asChild size="lg" className="shadow-neon hover:scale-110 transition-bounce bg-gradient-primary">
             <a href="#contact">Get In Touch</a>
           </Button>
-          <Button asChild variant="outline" size="lg">
+          <Button asChild variant="outline" size="lg" className="border-2 border-primary/50 hover:border-primary hover:shadow-glow transition-bounce hover:scale-110">
             <a href="#experience">View Experience</a>
           </Button>
-          <Button asChild variant="secondary" size="lg">
+          <Button asChild size="lg" className="bg-secondary hover:bg-secondary/80 shadow-glow hover:scale-110 transition-bounce">
             <a href="/Ravi_Kumar_Resume.pdf" download="Ravi_Kumar_Resume.pdf">
               <Download className="w-5 h-5 mr-2" />
               Download Resume
@@ -92,7 +94,7 @@ export const Hero = () => {
             href="https://github.com/mailtoravi437"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-smooth"
+            className="flex items-center gap-2 text-muted-foreground hover:text-primary hover:scale-110 transition-bounce"
           >
             <Github className="w-5 h-5" />
             <span className="text-sm">GitHub</span>
@@ -101,21 +103,21 @@ export const Hero = () => {
             href="https://linkedin.com/in/mailtoravi437"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-smooth"
+            className="flex items-center gap-2 text-muted-foreground hover:text-secondary hover:scale-110 transition-bounce"
           >
             <Linkedin className="w-5 h-5" />
             <span className="text-sm">LinkedIn</span>
           </a>
           <a
             href="mailto:mailtoravi437@gmail.com"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-smooth"
+            className="flex items-center gap-2 text-muted-foreground hover:text-accent hover:scale-110 transition-bounce"
           >
             <Mail className="w-5 h-5" />
             <span className="text-sm">Email</span>
           </a>
           <a
             href="tel:+918240627029"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-smooth"
+            className="flex items-center gap-2 text-muted-foreground hover:text-primary hover:scale-110 transition-bounce"
           >
             <Phone className="w-5 h-5" />
             <span className="text-sm">+91-8240627029</span>

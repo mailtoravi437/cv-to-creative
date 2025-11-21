@@ -8,40 +8,43 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 250 50% 8%;
+    --foreground: 280 100% 98%;
 
-    --card: 217 33% 17%;
-    --card-foreground: 210 40% 98%;
+    --card: 250 40% 12%;
+    --card-foreground: 280 100% 98%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 250 50% 8%;
+    --popover-foreground: 280 100% 98%;
 
-    --primary: 189 94% 43%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 280 100% 65%;
+    --primary-foreground: 250 50% 8%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 320 100% 60%;
+    --secondary-foreground: 250 50% 8%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 250 40% 15%;
+    --muted-foreground: 280 30% 70%;
 
-    --accent: 189 94% 43%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 250 50% 8%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 280 100% 98%;
 
-    --border: 217 33% 24%;
-    --input: 217 33% 24%;
-    --ring: 189 94% 43%;
+    --border: 280 60% 30%;
+    --input: 280 60% 25%;
+    --ring: 280 100% 65%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
     
-    --gradient-primary: linear-gradient(135deg, hsl(189 94% 43%) 0%, hsl(217 91% 60%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(217 33% 17% / 0.5) 0%, hsl(217 33% 20% / 0.3) 100%);
-    --shadow-glow: 0 0 40px hsl(189 94% 43% / 0.15);
+    --gradient-primary: linear-gradient(135deg, hsl(280 100% 65%) 0%, hsl(320 100% 60%) 50%, hsl(180 100% 50%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(250 40% 12% / 0.8) 0%, hsl(280 40% 15% / 0.6) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(280 100% 65% / 0.3), transparent 70%);
+    --shadow-glow: 0 0 60px hsl(280 100% 65% / 0.4), 0 0 30px hsl(320 100% 60% / 0.3);
+    --shadow-neon: 0 0 20px hsl(180 100% 50% / 0.6), 0 0 40px hsl(280 100% 65% / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -61,33 +64,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 250 50% 8%;
+    --foreground: 280 100% 98%;
 
-    --card: 217 33% 17%;
-    --card-foreground: 210 40% 98%;
+    --card: 250 40% 12%;
+    --card-foreground: 280 100% 98%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 250 50% 8%;
+    --popover-foreground: 280 100% 98%;
 
-    --primary: 189 94% 43%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 280 100% 65%;
+    --primary-foreground: 250 50% 8%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 320 100% 60%;
+    --secondary-foreground: 250 50% 8%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 250 40% 15%;
+    --muted-foreground: 280 30% 70%;
 
-    --accent: 189 94% 43%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 250 50% 8%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 280 100% 98%;
 
-    --border: 217 33% 24%;
-    --input: 217 33% 24%;
-    --ring: 189 94% 43%;
+    --border: 280 60% 30%;
+    --input: 280 60% 25%;
+    --ring: 280 100% 65%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -122,11 +125,39 @@ All colors MUST be HSL.
     background: var(--gradient-card);
   }
   
+  .gradient-glow {
+    background: var(--gradient-glow);
+  }
+  
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
   
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+  
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .game-card {
+    @apply relative overflow-hidden rounded-xl bg-card border-2 border-primary/30 shadow-glow;
+    @apply hover:border-primary hover:shadow-neon hover:scale-105 transition-bounce;
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  
+  .grid-background {
+    background-image: 
+      linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
   }
 }
